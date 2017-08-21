@@ -43,7 +43,7 @@ public class GirdViewActivity extends AppCompatActivity {
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 //        layoutManager.setOrientation(linearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerAdapterPro adapter = new RecyclerAdapterPro(bookList);
+        RecyclerAdapterPro adapter = new RecyclerAdapterPro(this,bookList);
         recyclerView.setAdapter(adapter);
 
         gridView = (GridView) findViewById(R.id.gridView);

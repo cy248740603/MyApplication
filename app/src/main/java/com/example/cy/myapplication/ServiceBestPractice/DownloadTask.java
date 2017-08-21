@@ -45,10 +45,10 @@ public class DownloadTask extends AsyncTask<String,Integer,Byte> {
             if (file.exists()){
                 downloadedlength = file.length();
             }
-            long contentlegth = getContentLength(downloadUrl);
-            if (contentlegth == 0){
+            long contentlength = getContentLength(downloadUrl);
+            if (contentlength == 0){
                 return TYPE_FAILED;
-            }else if(contentlegth == downloadedlength){
+            }else if(contentlength == downloadedlength){
                 //已下载字节和文件总字节相等，说明已经下载完成了
                 return  TYPE_SUCCESS;
             }
@@ -76,7 +76,7 @@ public class DownloadTask extends AsyncTask<String,Integer,Byte> {
                         savedFile.write(b,0,len);
                         //计算已下载的百分比
                         int progress = (int) ((total + downloadedlength) * 100 /
-                        contentlegth);
+                        contentlength);
                         publishProgress(progress);
                     }
                 }

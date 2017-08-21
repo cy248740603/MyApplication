@@ -1,5 +1,8 @@
 package com.example.cy.myapplication.RecyclerView_GridView;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cy.myapplication.Book;
+import com.example.cy.myapplication.MaterialDesign.MaterialDesignActivity;
 import com.example.cy.myapplication.R;
 
 import java.util.List;
@@ -20,7 +24,8 @@ import java.util.List;
 
 public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.ViewHolder>{
     private List<Book> mBookList;
-
+    private Activity maActivity;
+    public final static String EXTRA_MESSAGE = "com.example.cy.myapplication.RecyclerView.MESSAGE";
     static class ViewHolder extends RecyclerView.ViewHolder{
         View bookView;
         ImageView bookImage;
@@ -34,7 +39,8 @@ public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.
         }
     }
 
-    public RecyclerAdapterPro(List<Book> bookList){
+    public RecyclerAdapterPro(Activity activity, List<Book> bookList){
+        maActivity = activity;
         mBookList = bookList;
     }
     public ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
@@ -55,6 +61,11 @@ public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.
                 Book book = mBookList.get(position);
                 Toast.makeText(v.getContext(),"you clicked image" + book.getName(),
                         Toast.LENGTH_SHORT).show();
+                if (book.getName().equals("编码")){
+                    Intent mainIntent = new Intent(maActivity,
+                            MaterialDesignActivity.class);
+                    maActivity.startActivity(mainIntent);
+                }
             }
         });
         holder.bookName.setOnClickListener(new View.OnClickListener(){
