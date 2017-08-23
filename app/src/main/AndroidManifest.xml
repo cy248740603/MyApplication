@@ -56,7 +56,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".MaterialDesign.MaterialDesignActivity"></activity>
+        <activity android:name=".MaterialDesign.MaterialDesignActivity" />
+        <activity android:name=".MaterialDesign.FruitActivity"></activity>
     </application>
 
 </manifest>
