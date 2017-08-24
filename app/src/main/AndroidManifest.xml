@@ -59,8 +59,9 @@
         <activity android:name=".MaterialDesign.MaterialDesignActivity" />
         <activity
             android:name=".MaterialDesign.FruitActivity"
-            android:theme="@style/FruitActivityTheme"></activity>
-        <activity android:name=".Fragment.FragmentActivity"></activity>
+            android:theme="@style/FruitActivityTheme" />
+        <activity android:name=".Fragment.FragmentActivity" />
+        <activity android:name=".Fragment.NewsContentActivity"></activity>
     </application>
 
 </manifest>

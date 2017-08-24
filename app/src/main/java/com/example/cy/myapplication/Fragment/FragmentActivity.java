@@ -16,12 +16,10 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
-        Button button = (Button)findViewById(R.id.button_fragment);
-        button.setOnClickListener(this);
+//        Button button = (Button)findViewById(R.id.button_fragment);
+//        button.setOnClickListener(this);
        // replaceFragment(new RightFragment());
     }
-
-    @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button_fragment:
