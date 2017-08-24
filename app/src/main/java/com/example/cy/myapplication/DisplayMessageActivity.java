@@ -33,12 +33,15 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     private MyService.DownloadBinder downloadBinder;
     private DownloadService.DownloadBinder downloadServiceBinder;
+
+    private byte isBinded = 0;
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             downloadBinder =(MyService.DownloadBinder) iBinder;
             downloadBinder.startDownload();
             downloadBinder.getProgress();
+            isBinded = 1;
         }
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
@@ -103,7 +106,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
         unbindService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                unbindService(connection);//解绑服务
+                if (isBinded != 0)
+                    unbindService(connection);//解绑服务
             }
         });
 
@@ -172,8 +176,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        if (isBinded != 0)
+            unbindService(connection);
         super.onDestroy();
-        unbindService(connection);
     }
 
     public void sendMessage(View view){

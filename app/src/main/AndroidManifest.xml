@@ -25,6 +25,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -56,9 +57,10 @@
             android:exported="true" />
 
         <activity android:name=".MaterialDesign.MaterialDesignActivity" />
-        <activity android:name=".MaterialDesign.FruitActivity"
-            android:theme="@style/FruitActivityTheme">
-        </activity>
+        <activity
+            android:name=".MaterialDesign.FruitActivity"
+            android:theme="@style/FruitActivityTheme"></activity>
+        <activity android:name=".Fragment.FragmentActivity"></activity>
     </application>
 
 </manifest>
