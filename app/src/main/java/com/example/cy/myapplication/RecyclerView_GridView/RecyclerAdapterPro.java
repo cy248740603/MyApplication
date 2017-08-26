@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cy.myapplication.Book;
+import com.example.cy.myapplication.CameraAlbumTest.Camera;
 import com.example.cy.myapplication.Fragment.FragmentActivity;
 import com.example.cy.myapplication.MaterialDesign.MaterialDesignActivity;
 import com.example.cy.myapplication.R;
@@ -69,6 +70,10 @@ public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.
                 }else if (book.getName().equals("审批")){
                     Intent mainIntent = new Intent(maActivity,
                             FragmentActivity.class);
+                    maActivity.startActivity(mainIntent);
+                }else if(book.getName().equals("钥匙")){
+                    Intent mainIntent = new Intent(maActivity,
+                            Camera.class);
                     maActivity.startActivity(mainIntent);
                 }
             }
