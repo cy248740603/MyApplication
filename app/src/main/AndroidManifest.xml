@@ -22,14 +22,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <provider android:name="android.support.v4.content.FileProvider"
+        <provider
+            android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.cy.myapplication.CameraAlbumTest.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,7 +72,8 @@
             android:theme="@style/FruitActivityTheme" />
         <activity android:name=".Fragment.FragmentActivity" />
         <activity android:name=".Fragment.NewsContentActivity" />
-        <activity android:name=".CameraAlbumTest.Camera"></activity>
+        <activity android:name=".CameraAlbumTest.Camera" />
+        <activity android:name=".PlayAudioTest.PlayAudio"></activity>
     </application>
 
 </manifest>

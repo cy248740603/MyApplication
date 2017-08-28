@@ -15,6 +15,7 @@ import com.example.cy.myapplication.Book;
 import com.example.cy.myapplication.CameraAlbumTest.Camera;
 import com.example.cy.myapplication.Fragment.FragmentActivity;
 import com.example.cy.myapplication.MaterialDesign.MaterialDesignActivity;
+import com.example.cy.myapplication.PlayAudioTest.PlayAudio;
 import com.example.cy.myapplication.R;
 
 import java.util.List;
@@ -75,7 +76,12 @@ public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.
                     Intent mainIntent = new Intent(maActivity,
                             Camera.class);
                     maActivity.startActivity(mainIntent);
+                }else if(book.getName().equals("日志")){
+                    Intent mainIntent = new Intent(maActivity,
+                            PlayAudio.class);
+                    maActivity.startActivity(mainIntent);
                 }
+
             }
         });
         holder.bookName.setOnClickListener(new View.OnClickListener(){
