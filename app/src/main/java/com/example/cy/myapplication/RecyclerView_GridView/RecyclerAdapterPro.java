@@ -1,7 +1,6 @@
 package com.example.cy.myapplication.RecyclerView_GridView;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,9 +13,11 @@ import android.widget.Toast;
 import com.example.cy.myapplication.Book;
 import com.example.cy.myapplication.CameraAlbumTest.Camera;
 import com.example.cy.myapplication.Fragment.FragmentActivity;
+import com.example.cy.myapplication.LBStest.BaiduMapTest;
 import com.example.cy.myapplication.MaterialDesign.MaterialDesignActivity;
 import com.example.cy.myapplication.PlayAudioTest.PlayAudio;
 import com.example.cy.myapplication.R;
+import com.example.cy.myapplication.ViewCustom.CustomViewActivity;
 
 import java.util.List;
 
@@ -79,6 +80,14 @@ public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.
                 }else if(book.getName().equals("日志")){
                     Intent mainIntent = new Intent(maActivity,
                             PlayAudio.class);
+                    maActivity.startActivity(mainIntent);
+                }else if(book.getName().equals("维修")){
+                    Intent mainIntent = new Intent(maActivity,
+                            BaiduMapTest.class);
+                    maActivity.startActivity(mainIntent);
+                }else if(book.getName().equals("故障申报")){
+                    Intent mainIntent = new Intent(maActivity,
+                            CustomViewActivity.class);
                     maActivity.startActivity(mainIntent);
                 }
 

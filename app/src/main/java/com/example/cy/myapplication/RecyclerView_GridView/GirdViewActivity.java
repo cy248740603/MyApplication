@@ -41,7 +41,7 @@ public class GirdViewActivity extends AppCompatActivity {
 //        StaggeredGridLayoutManager layoutManager= new
 //                StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);//瀑布流
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        layoutManager.setOrientation(linearLayoutManager.HORIZONTAL);
+//        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
         RecyclerAdapterPro adapter = new RecyclerAdapterPro(this,bookList);
         recyclerView.setAdapter(adapter);

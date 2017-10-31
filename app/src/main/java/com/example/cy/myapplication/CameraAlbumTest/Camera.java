@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -109,23 +111,38 @@ public class Camera extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("log","ccccccccccccccc");
+    }
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode){
             case TAKE_PHOTO:
-                if (resultCode == RESULT_OK){
-                    try {
-                        //将拍摄的照片显示出来
-                        BitmapFactory.Options newOpts = new BitmapFactory.Options();
-                        newOpts.inJustDecodeBounds = true;
-                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().
-                                openInputStream(imageUri),null,newOpts);
-                        newOpts.inJustDecodeBounds = false;
-                        bitmap = BitmapFactory.decodeStream(getContentResolver().
-                                openInputStream(imageUri),null,newOpts);
-                        picture.setImageBitmap(bitmap);
-                    }catch (FileNotFoundException e){
-                        e.printStackTrace();
-                    }
+                if (resultCode == RESULT_OK ){
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                //将拍摄的照片显示出
+                                Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().
+                                        openInputStream(imageUri));
+                                picture.setImageBitmap(bitmap);
+                            }catch (FileNotFoundException e){
+                                e.printStackTrace();
+                            }
+                        }
+                    },4000);
+//                    try {
+//                        //将拍摄的照片显示出
+//                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+////                        bitmap = BitmapFactory.decodeStream(getContentResolver().
+////                                openInputStream(imageUri));
+//                        picture.setImageBitmap(bitmap);
+//                    }catch (FileNotFoundException e){
+//                        e.printStackTrace();
+//                    }
                 }
                 break;
             case CHOOSE_PHOTO:

@@ -2,17 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cy.myapplication">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -73,7 +78,14 @@
         <activity android:name=".Fragment.FragmentActivity" />
         <activity android:name=".Fragment.NewsContentActivity" />
         <activity android:name=".CameraAlbumTest.Camera" />
-        <activity android:name=".PlayAudioTest.PlayAudio"></activity>
+        <activity android:name=".PlayAudioTest.PlayAudio" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="mo5N2HbDCbG7ujuOGsKD3xCeiSdIvGiS" />
+
+        <activity android:name=".LBStest.BaiduMapTest" />
+        <activity android:name=".ViewCustom.CustomViewActivity"></activity>
     </application>
 
 </manifest>
