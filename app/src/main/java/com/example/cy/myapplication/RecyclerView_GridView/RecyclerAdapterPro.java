@@ -2,6 +2,7 @@ package com.example.cy.myapplication.RecyclerView_GridView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cy.myapplication.Airbnb.AirbnbDialog;
 import com.example.cy.myapplication.Book;
 import com.example.cy.myapplication.CameraAlbumTest.Camera;
 import com.example.cy.myapplication.Fragment.FragmentActivity;
@@ -89,6 +91,10 @@ public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.
                     Intent mainIntent = new Intent(maActivity,
                             CustomViewActivity.class);
                     maActivity.startActivity(mainIntent);
+                }else if(book.getName().equals("统计")){
+                    AirbnbDialog dialog = new AirbnbDialog();
+                    dialog.setWait(0f,0.5f,1000,5);
+                    dialog.show(maActivity.getFragmentManager(),"bababa");
                 }
 
             }
