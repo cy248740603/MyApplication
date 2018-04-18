@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cy.myapplication.Airbnb.AirbnbDialog;
+import com.example.cy.myapplication.BleSdk.BlueToothActivity;
 import com.example.cy.myapplication.Book;
 import com.example.cy.myapplication.CameraAlbumTest.Camera;
 import com.example.cy.myapplication.Fragment.FragmentActivity;
@@ -95,6 +96,10 @@ public class RecyclerAdapterPro extends RecyclerView.Adapter<RecyclerAdapterPro.
                     AirbnbDialog dialog = new AirbnbDialog();
                     dialog.setWait(0f,0.5f,1000,5);
                     dialog.show(maActivity.getFragmentManager(),"bababa");
+                }else if(book.getName().equals("工程")){
+                    Intent mainIntent = new Intent(maActivity,
+                            BlueToothActivity.class);
+                    maActivity.startActivity(mainIntent);
                 }
 
             }

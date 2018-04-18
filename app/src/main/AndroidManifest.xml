@@ -3,6 +3,9 @@
     package="com.example.cy.myapplication"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -86,6 +89,7 @@
 
         <activity android:name=".LBStest.BaiduMapTest" />
         <activity android:name=".ViewCustom.CustomViewActivity"></activity>
+        <activity android:name=".BleSdk.BlueToothActivity" />
     </application>
 
 </manifest>

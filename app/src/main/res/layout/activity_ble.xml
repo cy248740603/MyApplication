@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="搜索蓝牙"/>
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送"
+        android:enabled="false"
+        app:layout_constraintTop_toBottomOf="@id/button"/>
+    <EditText
+        android:id="@+id/device_id"
+        android:text="0037002C0B47373234343039"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/send"/>
+    <Button
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="断开连接"
+        app:layout_constraintTop_toBottomOf="@id/device_id"/>
+    <TextView
+        android:id="@+id/ble_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="接收数据:"
+        app:layout_constraintTop_toBottomOf="@id/close"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</android.support.constraint.ConstraintLayout>
