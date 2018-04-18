@@ -170,6 +170,25 @@ public class BleBase extends BluetoothGattCallback{
     }
 
     @Override
+    public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+        super.onCharacteristicWrite(gatt, characteristic, status);
+        Log.w("ble","--onCharacteristicWrite--: ");
+    }
+
+    @Override
+    public void onDescriptorRead(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+        super.onDescriptorRead(gatt, descriptor, status);
+
+        Log.w("ble","--onDescriptorRead--: ");
+    }
+
+    @Override
+    public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+        super.onDescriptorWrite(gatt, descriptor, status);
+        Log.w("ble","--onDescriptorWrite--: " + status);
+    }
+
+    @Override
     public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
         super.onCharacteristicChanged(gatt, characteristic);
         Log.w("ble","--onCharacteristicChanged--: ");

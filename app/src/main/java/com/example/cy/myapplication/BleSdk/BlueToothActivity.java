@@ -42,12 +42,12 @@ public class BlueToothActivity extends AppCompatActivity implements BleStatusCal
                 ble.getDevice();
             }
         });
-
+        final EditText text = findViewById(R.id.device_id);
         send = findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ble.sendData(sendBuff);
+                ble.sendData(PublicProtocol.packagePublicProtocol(PublicProtocol.setOpenDoorBean(text.getText().toString())));
             }
         });
         close = findViewById(R.id.close);
@@ -58,8 +58,6 @@ public class BlueToothActivity extends AppCompatActivity implements BleStatusCal
                 send.setEnabled(false);
             }
         });
-        EditText text = findViewById(R.id.device_id);
-        sendBuff = PublicProtocol.packagePublicProtocol(PublicProtocol.setOpenDoorBean(text.getText().toString()));
 
         bleData = findViewById(R.id.ble_data);
     }
